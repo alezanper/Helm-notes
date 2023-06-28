@@ -1,28 +1,4 @@
-# Documentation #
-https://helm.sh/docs
 
-# apache: name of release
-# bitnami/apache	repository
-# Install apache chart
-helm install apache bitnami/apache -namespace=<namespace>
-
-# upgrade apache chart
-helm upgrade apache bitnami/apache -namespace=<namespace>
-
-# Rollback to version 1
-helm rollback apache 1 -namespace=<namespace>
-
-# Uninstall apache
-helm uninstall apache
-
-# list repo
-helm repo list
-
-# Remove repo
-helm repo remove bitnami
-
-# Add a repo
-helm repo add bitnami https://charts.bitnami.com/bitnami
 
 # search for a chart on repo
 helm search repo mysql
