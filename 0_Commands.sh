@@ -1,9 +1,6 @@
 
 
-# search for a chart on repo
-helm search repo mysql
-helm search repo database
-helm search repo database --versions
+
 
 helm install mydb bitnami/mysql
 
@@ -13,13 +10,10 @@ helm list
 helm list -n <namespace>
 
 helm uninstall mydb
-
 helm install mydb bitnami/mysql --set auth.rootPassword=mypassword
-
 helm install mydb bitnami/mysql --values values.yaml
 
 # upgrade
-helm repo update
 helm list
 helm status mydb
 
