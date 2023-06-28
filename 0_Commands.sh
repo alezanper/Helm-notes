@@ -1,7 +1,3 @@
-
-
-
-
 helm install mydb bitnami/mysql
 
 helm status mydb
