@@ -1,0 +1,11 @@
+{{- if .Values.template.create -}}
+apiVersion: v1
+kind: {{.Values.template.name}}
+metadata:
+  name: {{.Values.template.name}}
+  image:
+  {{- range $key,$value := .Values.image}}
+    {{$key}}: {{$value | quote}}
+  {{- end }}
+
+{{- end }}
