@@ -1,0 +1,11 @@
+{{- if .Values.template.create -}}
+apiVersion: v1
+kind: {{.Values.template.name}}
+metadata:
+  name: {{.Values.template.name}}
+  animals:
+  {{- range .Values.custom.values }}
+    - {{. | upper | quote}}
+  {{- end}}
+
+{{- end }}

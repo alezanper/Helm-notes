@@ -80,24 +80,6 @@ if and condition condition2
 
 --------------------------------------
 
-with 
-
-values.yaml
-my:
-  values:
-    - usa
-	- india
-	- mexico
-	- brazil
-
-template.yaml
-{{- with .Values.my.values }}
-countries:
-{{- toYaml . | nindent 2}}
-{{- end]
-
---------------------------------------
-
 variables
 
 {{ $myFlag := "test" }}
@@ -105,22 +87,6 @@ variables
 {{- if $myFlag }}
 
 {{ $myFlag = false }}
-
---------------------------------------
-
-loops
-
-values.yaml
-my:
-  values:
-    - usa
-    - mexico
-
-template.yaml
-country:
-{{- range .Values.my.values }}
-  - {{. | upper | quote}}
-{{- end]
 
 --------------------------------------
 
