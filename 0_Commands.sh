@@ -1,29 +1,3 @@
-helm install mydb bitnami/mysql
-
-helm status mydb
-
-helm list
-helm list -n <namespace>
-
-helm uninstall mydb
-helm install mydb bitnami/mysql --set auth.rootPassword=mypassword
-helm install mydb bitnami/mysql --values values.yaml
-
-# upgrade
-helm list
-helm status mydb
-
-helm upgrade mydb bitnami/mysql --values values.yaml
-
-helm list 
-
-helm upgrade mydb bitnami/mysql --reuse-values
-
-
-#Release records:
-helm uninstall mydb --keep-history
-
-helm repo ls
 
 -------------------------------------------
 
@@ -59,72 +33,10 @@ helm release workflow
 helm bitnami chart 
 
 # Generate the templates:
-helm install mydb bitnami/mysql --values values.yaml --dry-run
 
-Will generate the templates in orden with values:
-helm template mydb bitnami/mysql --values values.yaml --dry-run
-helm template tomcat bitnami/tomcat
 
-# release records
-helm install mydb bitnami/mysql --values values.yaml
-helm ls
-k get secret
-helm secrets and app secrets
-helm upgrade mydb bitnami/mysql --values values.yaml
-	
-	values.yaml
-	-----------
-	auth:
-	  rootPassword: password
-	image:
-	  pullPolicy: Always
 
-	k get secret 	# new secret with upgrade
----------------------------------------
-helm get notes mydb		# release notes
-helm get values mydb	# values provided
-helm get values mydb --all	# all values
-helm get values mydb --revision 1	# values provided on version 1
-helm get manifest mydb --revision 1	# whole yaml for revision 1
 
----------------------------------------
-helm history mydb		# show version
-helm install webserver bitnami/apache	# install apache
-helm install webserver bitnami/apache --set image.pullPolicy=test		# bad upgrade
-helm history webserver
----------------------------------------
-
-helm history mywebserver
-helm rollback mywebser 1	# return to version 1
-helm uninstall mywebserver --keep-histoy	# enable rollback even with uninstalling
-helm rollback mywebserver 3		# rollback to installed version
-
----------------------------------------
-
-helm install mywebserver bitnami/apache --namespace mynamespace --create-namespace
-
----------------------------------------
-
-helm upgrade --install mywebserver bitnami/apache	# install or upgrade
-
----------------------------------------
-
-helm install bitnami/apache --generate-name		# install generating a name
-helm install bitnami/apache --generate-name --name-template "mywebserver-{{randAlpha 7 | lower}}"	# install and generate name with template
-
----------------------------------------
-helm install mywebserver bitnami/apache --wait --timeout 10m10s 
-
----------------------------------------
-helm install mywebserver bitnami/apache --atomic --wait --timeout 7m12s
-
----------------------------------------
-
-helm upgrade mywebserver bitnami/apache --force		# delete the deployment and create new ones
-
----------------------------------------
-
-helm upgrade mywebserver bitnami/apache --cleanup-on-failure
 
 ---------------------------------------
 ---------------------------------------

@@ -1,0 +1,4 @@
+auth:
+  rootPassword: superpassword
+image:
+  pullPolicy: Always

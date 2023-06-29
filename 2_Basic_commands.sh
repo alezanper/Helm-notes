@@ -12,6 +12,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 # bitnami/apache:	repository
 # Install apache chart
 helm install apache bitnami/apache -namespace=<namespace>
+helm install mywebserver bitnami/apache --namespace mynamespace --create-namespace
 
 # upgrade apache chart
 helm upgrade apache bitnami/apache -namespace=<namespace>
