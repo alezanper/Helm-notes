@@ -17,5 +17,5 @@ labels:
 {{- toYaml . | nindent 4}}
 {{- end}}
 
-# Compile an generate the template
+# Compile and generate the template
 helm template nginxchart
