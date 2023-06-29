@@ -32,50 +32,7 @@ helm release workflow
 
 helm bitnami chart 
 
-# Generate the templates:
 
-
-
-
-
----------------------------------------
----------------------------------------
-nginx chart to start:
-	helm create firstchart
-	chart.yaml
-	charts <folder>		depending charts will be downloaded here
-	templates <folder>
-	values.yaml	
-
----------------------------------------
-
-helm install firstapp firstchart
-
----------------------------------------
-
-chart.yaml
-	apiVersion
-	name
-	description
-	icon
-	keywords
-	home
-	sources
-	maintainers: name, email
-
---------------------------------------
-
-_helpers.tpl
-	stores information like charts name, labeles, etc
-
---------------------------------------
-
-helm package firstchart -u	# update dependencies with -u option
-
---------------------------------------
-
-To check the helm templates:
-	helm lint firstchart
 
 --------------------------------------
 --------------------------------------

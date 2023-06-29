@@ -1,0 +1,16 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+template:
+  # Specifies whether a template  should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # If not set and create is true, a name is generated using the fullname template
+  name: customTemplate
+
+custom:
+  labels:
+    label1: value1
+    label2: value2
+    label3: value3
