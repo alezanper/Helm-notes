@@ -11,7 +11,7 @@ custom:
     label2: value2
     label3: value3
 
-# Include the block the the template(s) that require the labels:
+# Include the block to the template(s) that requires the labels:
 {{- with .Values.custom.labels }}
 labels:
 {{- toYaml . | nindent 4}}
