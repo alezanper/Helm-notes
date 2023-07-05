@@ -101,7 +101,7 @@ image:
 template.yaml
 {{- range $key,$value := .Values.image}}
   - {{$key}}: {{$value | quote}}
-{{- end]
+{{- end }}
 
 --------------------------------------
 
